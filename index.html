@@ -1,313 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gaming Product Website</title>
-  <link rel="stylesheet" href="ecommerce-website.css">
-  <style>
-    .product img {
-      width: 200px; /* Adjust this value as needed */
-      height: auto;
-    }
-    .products-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .product {
-      text-align: center;
-      width: 220px; /* Adjust the product box width */
-    }
-    /* Cart styling */
-    .cart-container {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: #f1f1f1;
-      padding: 10px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      cursor: pointer;
-    }
-    .cart-container:hover {
-      background-color: #ddd;
-    }
-    .cart-counter {
-      position: absolute;
-      top: -5px;
-      right: -5px;
-      background-color: red;
-      color: white;
-      border-radius: 50%;
-      padding: 5px 10px;
-      font-size: 14px;
-    }
-
-    /* Cart Modal styling */
-    #cart-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-      max-width: 500px;
-      width: 90%;
-    }
-    .modal-content h2 {
-      margin-top: 0;
-    }
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 24px;
-      cursor: pointer;
-    }
-    .cart-item {
-      margin-bottom: 10px;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Server Hosting</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Welcome to Our Gaming Product Store</h1>
-    <nav>
-      <ul>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <!-- Cart Icon -->
-    <div class="cart-container" id="cart" onclick="toggleCartModal()">
-      <span>🛒</span>
-      <span class="cart-counter" id="cart-counter">0</span>
-    </div>
+    <h1>Test Server Hosting</h1>
+    <p>Free and simple web hosting for testing and learning.</p>
   </header>
 
-  <section id="products">
-    <h2>Our Products</h2>
-    <div class="products-container">
-      <!-- Gaming Products -->
-      <div class="product">
-        <h3>NVIDIA GeForce RTX 4090 24GB GDDR6X FE Founders Edition</h3>
-        <img src="images/rtx-4090.jpg" alt="NVIDIA GeForce RTX 4090 Graphics Card" />
-        <p>Price: PHP 92,818.95</p>
-        <button onclick="addToCart('NVIDIA GeForce RTX 4090 24GB GDDR6X FE Founders Edition', 99999.99)">Add to Cart</button>
-      </div>
+  <main>
+    <section>
+      <h2>About This Site</h2>
+      <p>This site is created as a free test hosting example using HTML, CSS, and GitHub Pages.</p>
+    </section>
 
-      <div class="product">
-        <h3>Logitech G Pro X Superlight Wireless Mouse</h3>
-        <img src="images/logitech-g-pro.jpg" alt="Logitech G Pro X Superlight Wireless Mouse" />
-        <p>Price: PHP 5,499.99</p>
-        <button onclick="addToCart('Logitech G Pro X Superlight Wireless Mouse', 5499.99)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <h3>Razer BlackWidow V3 Mechanical Keyboard</h3>
-        <img src="images/razer-keyboard.jpg" alt="Razer BlackWidow V3 Keyboard" />
-        <p>Price: PHP 6,799.99</p>
-        <button onclick="addToCart('Razer BlackWidow V3 Mechanical Keyboard', 6799.99)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <h3>SteelSeries Arctis Pro Wireless Headset</h3>
-        <img src="images/steelseries-headset.jpg" alt="SteelSeries Arctis Pro Wireless Headset" />
-        <p>Price: PHP 14,499.99</p>
-        <button onclick="addToCart('SteelSeries Arctis Pro Wireless Headset', 14499.99)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <h3>ASUS ROG Strix G17 Gaming Laptop</h3>
-        <img src="images/asus-laptop.jpg" alt="ASUS ROG Strix G17 Gaming Laptop" />
-        <p>Price: PHP 64,995.99</p>
-        <button onclick="addToCart('ASUS ROG Strix G17 Gaming Laptop', 64995.99)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <h3>Samsung Odyssey G7 32-inch Curved Monitor</h3>
-        <img src="images/samsung-odyssey.jpg" alt="Samsung Odyssey G7 Curved Monitor" />
-        <p>Price: PHP 30,499.99</p>
-        <button onclick="addToCart('Samsung Odyssey G7 32-inch Curved Monitor', 30499.99)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <h3>Corsair K95 RGB Platinum XT Mechanical Keyboard</h3>
-        <img src="images/corsair-keyboard.jpg" alt="Corsair K95 RGB Platinum XT" />
-        <p>Price: PHP 12,499.99</p>
-        <button onclick="addToCart('Corsair K95 RGB Platinum XT Mechanical Keyboard', 12499.99)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <h3>HyperX Cloud II Gaming Headset</h3>
-        <img src="images/hyperx-headset.jpg" alt="HyperX Cloud II Gaming Headset" />
-        <p>Price: PHP 4,499.99</p>
-        <button onclick="addToCart('HyperX Cloud II Gaming Headset', 4499.99)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <h3>BenQ ZOWIE XL2546K 240Hz Gaming Monitor</h3>
-        <img src="images/benq-monitor.jpg" alt="BenQ ZOWIE XL2546K Gaming Monitor" />
-        <p>Price: PHP 19,999.99</p>
-        <button onclick="addToCart('BenQ ZOWIE XL2546K 240Hz Gaming Monitor', 19999.99)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <h3>Seagate Barracuda 2TB Gaming Hard Drive</h3>
-        <img src="images/seagate-harddrive.jpg" alt="Seagate Barracuda Gaming Hard Drive" />
-        <p>Price: PHP 3,999.99</p>
-        <button onclick="addToCart('Seagate Barracuda 2TB Gaming Hard Drive', 3999.99)">Add to Cart</button>
-      </div>
-
-      <!-- SSD Products -->
-      <div class="product">
-        <h3>Samsung 970 EVO Plus 1TB NVME M.2 SSD</h3>
-        <img src="images/samsung-970-ssd.jpg" alt="Samsung 970 EVO Plus 1TB NVME M.2 SSD" />
-        <p>Price: PHP 5,499.99</p>
-        <button onclick="addToCart('Samsung 970 EVO Plus 1TB NVME M.2 SSD', 5499.99)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <h3>WD_BLACK SN850X 1TB Internal NVMe SSD</h3>
-        <img src="images/wd-sn850-ssd.jpg" alt="WD_BLACK SN850X 1TB Internal NVMe SSD" />
-        <p>Price: PHP 7,499.99</p>
-        <button onclick="addToCart('WD_BLACK SN850X 1TB Internal NVMe SSD', 7499.99)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <h3>Crucial P5 Plus 500GB PCIe M.2 2280SS Gaming SSD</h3>
-        <img src="images/crucial-p5-ssd.jpg" alt="Crucial P5 Plus 500GB PCIe M.2 2280SS Gaming SSD" />
-        <p>Price: PHP 2,499.99</p>
-        <button onclick="addToCart('Crucial P5 Plus 500GB PCIe M.2 2280SS Gaming SSD', 2499.99)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <h3>Seagate FireCuda 530 1TB NVMe SSD</h3>
-        <img src="images/seagate-firecuda-ssd.jpg" alt="Seagate FireCuda 530 1TB NVMe SSD" />
-        <p>Price: PHP 8,499.99</p>
-        <button onclick="addToCart('Seagate FireCuda 530 1TB NVMe SSD', 8499.99)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <h3>Kingston 1TB NV2 M.2 PCIe NVMe Gen 4 SSD</h3>
-        <img src="images/kingston-nv2-ssd.jpg" alt="Kingston 1TB NV2 M.2 PCIe NVMe Gen 4 SSD" />
-        <p>Price: PHP 3,199.99</p>
-        <button onclick="addToCart('Kingston 1TB NV2 M.2 PCIe NVMe Gen 4 SSD', 3199.99)">Add to Cart</button>
-      </div>
-
-      <!-- New Casing and Motherboard Products -->
-      <div class="product">
-        <h3>NZXT H510 Elite Premium Compact Mid-Tower ATX Case</h3>
-        <img src="images/nzxt-h510-elite.jpg" alt="NZXT H510 Elite Premium Compact Mid-Tower ATX Case (Matte White) (CA-H510E-W1)" />
-        <p>Price: PHP 6,499.99</p>
-        <button onclick="addToCart('NZXT H510 Elite Premium Compact Mid-Tower ATX Case', 6499.99)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <h3>MasterBox Q300L Mini Tower PC Case</h3>
-        <img src="images/cooler-master-q300l.jpg" alt="Cooler Master MasterBox Q300L Case" />
-        <p>Price: PHP 3,999.99</p>
-        <button onclick="addToCart('MasterBox Q300L Mini Tower PC Case', 3999.99)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <h3>MSI MPG Z590 GAMING EDGE WIFI Motherboard</h3>
-        <img src="images/msi-z590-motherboard.jpg" alt="MSI MPG Z590 GAMING EDGE WIFI Motherboard" />
-        <p>Price: PHP 12,499.99</p>
-        <button onclick="addToCart('MSI MPG Z590 GAMING EDGE WIFI Motherboard', 12499.99)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <h3>ASRock B550 Phantom Gaming 4 Motherboard</h3>
-        <img src="images/asrock-b550-motherboard.jpg" alt="ASRock B550 Phantom Gaming 4 Motherboard" />
-        <p>Price: PHP 8,499.99</p>
-        <button onclick="addToCart('ASRock B550 Phantom Gaming 4 Motherboard', 8499.99)">Add to Cart</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Cart Modal -->
-  <div id="cart-modal">
-    <div class="modal-content">
-      <span class="close" onclick="toggleCartModal()">×</span>
-      <h2>Your Cart</h2>
-      <div id="cart-items"></div>
-      <p><strong>Total: PHP <span id="total-price">0.00</span></strong></p>
-      <button id="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
-    </div>
-  </div>
-
-  <script>
-    const cart = [];
-
-    function addToCart(name, price) {
-      const item = { name, price };
-      cart.push(item);
-      updateCart();
-    }
-
-    function updateCart() {
-      const cartCounter = document.getElementById('cart-counter');
-      const cartItemsDiv = document.getElementById('cart-items');
-      const totalPrice = document.getElementById('total-price');
-
-      cartCounter.textContent = cart.length;
-
-      // Clear previous cart items
-      cartItemsDiv.innerHTML = '';
-      
-      let total = 0;
-
-      // Display each item in the cart
-      cart.forEach((item, index) => {
-        total += item.price;
-        const cartItem = document.createElement('div');
-        cartItem.classList.add('cart-item');
-        cartItem.textContent = `${item.name} - PHP ${item.price.toFixed(2)}`;
-        cartItemsDiv.appendChild(cartItem);
-      });
-
-      // Update total price
-      totalPrice.textContent = total.toFixed(2);
-    }
-
-    function toggleCartModal() {
-      const modal = document.getElementById('cart-modal');
-      modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
-    }
-
-    function checkout() {
-      if (cart.length === 0) {
-        alert('Your cart is empty.');
-        return;
-      }
-      alert('Proceeding to payment...');
-      cart.length = 0; // Clear the cart
-      updateCart(); // Update the UI
-    }
-  </script>
-   <section id="about">
-    <h2>About Us</h2>
-    <p>We provide the best online shopping experience.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email us at: <a href="mailto:store@example.com">store@example.com</a></p>
-  </section>
+    <section>
+      <h2>Features</h2>
+      <ul>
+        <li>Free GitHub Pages Hosting</li>
+        <li>Responsive Layout</li>
+        <li>Customizable HTML/CSS</li>
+        <li>No payment needed</li>
+        <li>Great for beginners and testing</li>
+      </ul>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Ecommerce Website</p>
+    <p>© 2025 Test Server Hosting | Made for learning and testing.</p>
   </footer>
 </body>
 </html>
